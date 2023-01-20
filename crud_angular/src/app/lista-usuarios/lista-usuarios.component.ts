@@ -22,8 +22,6 @@ export class ListaUsuariosComponent implements OnInit {
   borrarUsuario(id: string) {
     this.usuarioService.borrarUsuario(id).subscribe(data => {
       console.log(data);
-    }, error => {
-      console.log(error);
     })
 
     this.usuarios = this.usuarioService.obtenerUsuarios()
