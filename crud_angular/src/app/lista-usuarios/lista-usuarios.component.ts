@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsuarioModel } from '../shared/usuario.model';
 import { UsuarioService } from '../shared/usuario.service';
@@ -13,7 +14,10 @@ export class ListaUsuariosComponent implements OnInit {
 
   usuarios: Observable<UsuarioModel[]> | undefined;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(
+    private usuarioService: UsuarioService,
+     private router: Router
+  ) { }
 
   ngOnInit() {
       this.usuarios = this.usuarioService.obtenerUsuarios();
@@ -24,7 +28,7 @@ export class ListaUsuariosComponent implements OnInit {
       console.log(data);
     })
 
-    this.usuarios = this.usuarioService.obtenerUsuarios()
+    this.router.navigate(['/usuarios'])
   }
 
 }
