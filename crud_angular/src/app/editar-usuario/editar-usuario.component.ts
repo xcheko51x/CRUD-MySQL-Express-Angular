@@ -40,38 +40,15 @@ export class EditarUsuarioComponent implements OnInit {
 
     if(this.usuario.id_usuario) {
       this.usuarioService.actualizarUsuario(this.usuario).subscribe(data => {
-      alert(data)
-      this.router.navigate(['/usuarios'])
-      }, error => {
-        console.log(error);
-
+        alert(data)
+        this.router.navigate(['/usuarios'])
       })
     } else {
       console.log('crear');
       this.usuarioService.agregarUsuario(this.usuario).subscribe(data => {
         alert(data)
         this.router.navigate(['/usuarios'])
-      }, error => {
-        console.log(error);
-
       })
     }
-
-    /*if(this.usuario.id_usuario) {
-      this.usuarioService.actualizarUsuario(this.usuario).subscribe(data => {
-        console.log(data);
-        this.router.navigate([`/usuarios`])
-      }, error => {
-        console.log(error);
-
-      })
-    } else {
-      this.usuarioService.agegarUsuario(this.usuario).subscribe(data => {
-        console.log(data);
-        this.router.navigate([`/usuarios`])
-      }, error => {
-        console.log(error);
-      })
-    }*/
   }
 }
