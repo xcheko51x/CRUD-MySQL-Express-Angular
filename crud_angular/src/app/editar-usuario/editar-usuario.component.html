@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="nombre">Nombre</label>
+          <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="nombre">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="email">Email</label>
+          <input type="email" class="form-control" required [(ngModel)]="usuario.email" name="email">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.form.valid">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
