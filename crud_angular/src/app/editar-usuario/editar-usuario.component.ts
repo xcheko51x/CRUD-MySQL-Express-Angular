@@ -11,9 +11,7 @@ import { UsuarioModel } from '../shared/usuario.model';
 export class EditarUsuarioComponent implements OnInit {
 
   id = ''
-  usuario = new UsuarioModel("","","")
-
-  mensaje = ''
+  usuario = new UsuarioModel("","","");
 
   constructor(
     private usuarioService: UsuarioService,
